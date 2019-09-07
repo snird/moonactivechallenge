@@ -1,0 +1,11 @@
+Task execution is triggered by event loop timeout;
+Use logger to log message;
+Remove task from "handled tasks queue";
+Pop next task from "tasks queue";
+if (there is a next task) {
+  Add it to event loop accordingly;
+} else {
+  Do nothing, it will be
+  handled upon next task
+  sent to API;
+}

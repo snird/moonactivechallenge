@@ -1,0 +1,6 @@
+env:
+  jest: true
+rules:
+  'no-shadow': off
+  'no-global-assign': off
+  'no-console': off

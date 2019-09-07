@@ -1,0 +1,18 @@
+while(Check if "two_phase_handler"
+key in redis is set) {
+  Settime out for 20 seconds
+  to check again;
+} 
+Setex for 20 second the
+"two_phase_handler" every
+5 seconds (The IAMLIVE process);
+check_handled_queue:
+peek top task of "handled tasks queue";
+if(task is more than 10 seconds late) {
+  pop task;
+  push back to "tasks queue"
+  for re-process
+} else {
+  settimeout 20 seconds;
+  loop check_handled_queue
+}

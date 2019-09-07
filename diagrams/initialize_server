@@ -1,0 +1,5 @@
+Check for tasks in redis;
+if (there is a task) {
+  add to event loop; //past tasks will be added with timeout 0, so immediate effect
+}
+server listen

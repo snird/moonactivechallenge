@@ -1,0 +1,5 @@
+Add task to event loop;
+pop closest task from "tasks queue"; // "tasks queue" is the redis sorted set, sorted by timetasmp of execution of a log task
+calculate time in ms from now to the exec time;
+set timeout for this time to execute task;
+add task to "handled tasks queue"; //"handled tasks queue" is the 2-phase commit queue explained above. We add every task here to have resilliency against server failure in interim of execution.
